@@ -19,8 +19,8 @@ ExitProcess PROTO, dwExitCode:DWORD
 ;-----------------------------------------------------------------
 ;preprocess
 ;transform x,y to abs(x) and abs(y),check if any of them is zero,use edx to deliver error message
-;receives:ebx,ecx = x,y x > y
-;returns:ebx,ecx = abs(x),abs(y),edx = 0 if feasible, 1 if infeasible
+;receives:ebx = x,ecx = y
+;returns:ebx = abs(x),ecx = abs(y),edx = 0 if feasible, 1 if infeasible
 ;-----------------------------------------------------------------
 PreProcess PROC
 	mov edx,0
@@ -52,7 +52,7 @@ zeroError:
 PreProcess ENDP
 ;-----------------------------------------------------------------
 ;calculate gcd
-;receives:ebx,ecx = x,y
+;receives:ebx = x,ecx = y
 ;returns:eax = gcd(x,y)
 ;requires:x > 0, y > 0,x > y
 ;-----------------------------------------------------------------
