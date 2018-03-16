@@ -1,2 +1,2 @@
 # asmPractice
-assignments of asm
+Assignments of course **汇编语言** in THU.
